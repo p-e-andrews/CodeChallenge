@@ -56,6 +56,12 @@ Bonus points:
   PHPUnit:
   https://laravel.com/docs/9.x/testing
 
+  Testing:
+  https://emymbenoun.medium.com/how-to-use-uuids-instead-of-auto-increment-ids-in-your-laravel-app-2e6cc045f6c1
+  https://fakerphp.github.io/
+  https://fakerphp.github.io/formatters/numbers-and-strings/
+  https://shortcode.dev/laravel/faker.html
+
   Git and GitHub:
   https://www.techielass.com/convert-a-folder-to-a-git-repository/
   https://www.theserverside.com/video/How-to-use-the-git-remote-add-origin-command-to-push-remotely 
@@ -143,10 +149,20 @@ Bonus points:
   6. To see/report test coverage AND set minimum coverage to meet, in command line: php artisan test --coverage --min=80.3
 
   Testing:
-  1. Create some 
+  1. Create some fake processes using (Laravel included) factories and seeders
+  2. Under 'database' create new file ProcessFactory.php
+  3. Fill in defintion() with process fields and use fake(), re cited uuid tutorial
+  4. Import Model Process and Traits Uuids
+  5. Create a process seeder to create a bunch of fake processes for our table, in command line: php artisan make: seeder ProcessSeeder
+  6. In new file ProcessSeeder.php import Process Model
+  7. In ProcessSeeder.php's run() add: factory(Process::class, 6)->create();
+  8. Open existing DatabaseSeeder.php and add call to ProcessSeeder: $this->call(ProcessSeeder::class);
+  9. Run the seeder, in command line: php artisan db:seed
 
 
 NOTES:
 1. Using 'UUID' in place of 'id' during references will upset sql database, as it assumes 'id'
 2. Sql assumes created_at and updated_at columns, migration file needs $table->timestamps();
 3. Many hints indicate Linux or Docker might be better for this project including command line warning after tests: 'TTY mode is not supported on Windows platform'
+4. Terms for 'faker' in testing fields are specific though possibly similar to existing field names, be careful
+
