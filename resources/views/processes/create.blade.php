@@ -31,7 +31,7 @@
               <input type="text" class="form-control" name="code"/>
           </div>
           <div class="form-group">
-              <label for="status">Status:</label>
+              <label for="status">Status</label>
               <input type="text" class="form-control" name="status"/>
           </div>                         
           <button type="submit" class="btn btn-primary-outline">Add process</button>

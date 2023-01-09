@@ -32,7 +32,7 @@
                 <input type="text" class="form-control" name="code" value={{ $process->code }} />
             </div>
             <div class="form-group">
-                <label for="status">Status:</label>
+                <label for="status">Status</label>
                 <input type="text" class="form-control" name="status" value={{ $process->status }} />
             </div>
             <button type="submit" class="btn btn-primary">Update</button>

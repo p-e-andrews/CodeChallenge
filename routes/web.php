@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::resource('processes', 'App\Http\Controllers\ProcessController');
+// PA: addeded route for vue bootstrap model per https://fahmidasclassroom.com/laravel-7-crud-using-bootstrap-modal/
+Route::get('processes/{id}/edit/', 'ProcessController@edit');

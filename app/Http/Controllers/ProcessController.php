@@ -61,9 +61,10 @@ class ProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // PA: added code from https://fahmidasclassroom.com/laravel-7-crud-using-bootstrap-modal/
     public function show($id)
     {
-        //
+        return view('processes.show', compact('process'));
     }
 
     /**
