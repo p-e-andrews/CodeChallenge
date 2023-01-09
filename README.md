@@ -51,6 +51,7 @@ Bonus points:
 
   UUIDs:
   https://emymbenoun.medium.com/how-to-use-uuids-instead-of-auto-increment-ids-in-your-laravel-app-2e6cc045f6c1 re: followed tutorial, used a portion of given code
+  https://laravel.com/docs/9.x/migrations
 
   Git and GitHub:
   https://www.techielass.com/convert-a-folder-to-a-git-repository/
@@ -119,7 +120,18 @@ Bonus points:
   11. Use code from cited blade tutorial, BUT update fields, table name, and Model name
   12. Update edit() in ProcessController to use view edit.blade.php, re cited blade tutorial
   13. Update destroy() in ProcessController to use view edit.blade.php, re cited blade tutorial
+  14. Add success message to index.blade.php, re cited blade tutorial
+  15. Add button to 'create form' in index.blade.php, re cited blade tutorial
+
+  UUIDs:
+  1. Under app folder create 'Traits' folder
+  2. Create new file Uuids.php in Traits folder for easy reuse
+  3. Add code to Uuids.php, re cited UUID tutorial
+  4. Import Uuids into Model file Process.php using: use App\Traits\Uuids;
+  5. Update create_processes_table.php migrations file by changing $table->id(); into $table->uuid('id')->primary();
+  6. Delete all previous database tables and migrate above update, in command line: php artisan migrate:fresh
+
 
 NOTES:
 1. Using 'UUID' in place of 'id' during references will upset sql database, as it assumes 'id'
-2. Sql assumes created_at and updated_at columns, remember to keep the $timestamps
+2. Sql assumes created_at and updated_at columns, migration file needs $table->timestamps();
