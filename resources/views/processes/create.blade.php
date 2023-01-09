@@ -16,10 +16,6 @@
     @endif
       <form method="post" action="{{ route('processes.store') }}">
           @csrf
-          <div class="form-group">    
-              <label for="id">UUID:</label>
-              <input type="text" class="form-control" name="id"/>
-          </div>
 
           <div class="form-group">
               <label for="name">Name:</label>

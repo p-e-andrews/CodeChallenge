@@ -17,11 +17,6 @@
         <form method="post" action="{{ route('processes.update', $process->id) }}">
             @method('PATCH') 
             @csrf
-            <div class="form-group">
-
-                <label for="id">UUID:</label>
-                <input type="text" class="form-control" name="id" value={{ $process->id }} />
-            </div>
 
             <div class="form-group">
                 <label for="name">Name:</label>
