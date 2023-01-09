@@ -1,0 +1,47 @@
+@extends('base') 
+@section('main')
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h1 class="display-3">Update a Process</h1>
+
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        <br /> 
+        @endif
+        <form method="post" action="{{ route('processes.update', $process->id) }}">
+            @method('PATCH') 
+            @csrf
+            <div class="form-group">
+
+                <label for="id">UUID:</label>
+                <input type="text" class="form-control" name="id" value={{ $process->id }} />
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" name="name" value={{ $process->name }} />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <input type="text" class="form-control" name="description" value={{ $process->description }} />
+            </div>
+            <div class="form-group">
+                <label for="code">Code:</label>
+                <input type="text" class="form-control" name="code" value={{ $process->code }} />
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" class="form-control" name="status" value={{ $process->status }} />
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>
+@endsection
