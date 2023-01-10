@@ -166,3 +166,18 @@ NOTES:
 3. Many hints indicate Linux or Docker might be better for this project including command line warning after tests: 'TTY mode is not supported on Windows platform'
 4. Terms for 'faker' in testing fields are specific though possibly similar to existing field names, be careful
 
+----------------------Andrews Log: Continued---------------------
+GOALS:
+- Set up Feature tests and Unit tests with PHPUnit
+- Separate API completely (aka methods do not call on blade views)
+- Use VueJS to create a Modal for editing a record (Modal aka 'popup')
+- Explore security re PassPort or similar
+- Research 'Conditional Records List' possibilities
+- Examine working in Docker
+- Clean up
+
+Set up separate branch:
+1. Create and switch to new branch, in command line: git checkout -b
+
+NOTES:
+1. Challenge might imply that blade returns VueJS, more research needed
