@@ -191,6 +191,9 @@ Set up separate branch:
 
 Separate API:
 1. Update methods in ProcessController by removing uses of blade
+2. Update/Add CRUD API routes in web.php and api.php
+
+Setup Vue:
 
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed

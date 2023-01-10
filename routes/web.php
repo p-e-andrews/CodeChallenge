@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('processes', 'App\Http\Controllers\ProcessController');
+// PA: added updated route re API tutorial on positronx.io
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');
+
+// PA: commented out route during API overhaul for blade removal
+//Route::resource('processes', 'App\Http\Controllers\ProcessController');
 // PA: addeded route for vue bootstrap model per https://fahmidasclassroom.com/laravel-7-crud-using-bootstrap-modal/
-Route::get('processes/{id}/edit/', 'ProcessController@edit');
+//Route::get('processes/{id}/edit/', 'ProcessController@edit');
