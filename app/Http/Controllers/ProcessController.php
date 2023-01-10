@@ -12,11 +12,13 @@ class ProcessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // PA: updated index() to not use blade
     public function index()
     {
-        $processes = Process::all();
+        $processes = Process::all()->toArray();
 
-        return view('processes.index', compact('processes'));
+        return array_reverse($processes);
     }
 
     /**
@@ -24,10 +26,13 @@ class ProcessController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('processes.create');
-    }
+
+    //PA: commented out create() re API tutorial on positronx.io, so as to not use blade in API
+     /*public function create()
+    *{
+    *    return view('processes.create');
+    *}
+    */
 
     /**
      * Store a newly created resource in storage.
@@ -35,6 +40,8 @@ class ProcessController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // PA: replaced return with json re API tutorial on positronx.io
     public function store(Request $request)
     {
         $request->validate([
@@ -51,7 +58,8 @@ class ProcessController extends Controller
             'status' => $request->get('status') ? true : false
         ]);
         $process->save();
-        return redirect('/processes')->with('success', 'Process saved!');
+        return response()->json('Process saved!');
+        //return redirect('/processes')->with('success', 'Process saved!');
 
     }
 
@@ -61,10 +69,14 @@ class ProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     // PA: added code from https://fahmidasclassroom.com/laravel-7-crud-using-bootstrap-modal/
+    // PA: updated code to not use blade, re API tutorial on positronx.io
     public function show($id)
     {
-        return view('processes.show', compact('process'));
+        $process = Process::find($id);
+        return response()->json($process);
+        //return view('processes.show', compact('process'));
     }
 
     /**
@@ -73,12 +85,15 @@ class ProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $process = Process::find($id);
-        return view('processes.edit', compact('process'));        
 
-    }
+    // PA: commented out 'edit()', this is UI, not strictly API
+    /*public function edit($id,)
+    *{
+    *    $process = Process::find($id);
+    *    return view('processes.edit', compact('process'));        
+    *
+    *}
+    */
 
     /**
      * Update the specified resource in storage.
@@ -87,6 +102,8 @@ class ProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // PA: replaced update requests and return re API tutorial on positronx.io
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -95,13 +112,14 @@ class ProcessController extends Controller
         ]);
 
         $process = Process::find($id);
-        $process->name =  $request->get('name');
-        $process->description = $request->get('description');
-        $process->code = $request->get('code');
-        $process->status = $request->get('status');
-        $process->save();
-
-        return redirect('/processes')->with('success', 'Process updated!');
+        $process->update($request->all());
+        return response()->json('Process updated!');
+        //$process->name =  $request->get('name');
+        //$process->description = $request->get('description');
+        //$process->code = $request->get('code');
+        //$process->status = $request->get('status');
+        //$process->save();
+        //return redirect('/processes')->with('success', 'Process updated!');
 
     }
 

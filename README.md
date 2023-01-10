@@ -167,6 +167,14 @@ NOTES:
 4. Terms for 'faker' in testing fields are specific though possibly similar to existing field names, be careful
 
 ----------------------Andrews Log: Continued---------------------
+CITATIONS:
+
+Git:
+https://www.git-tower.com/learn/git/faq/git-create-remote-branch
+
+API:
+https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
+
 GOALS:
 - Separate API completely (aka methods do not call on blade views)
 - Set up Feature tests and Unit tests with PHPUnit
@@ -182,7 +190,7 @@ Set up separate branch:
 3. Confirm on GitHub visually and/or confirm in command line: git branch -r
 
 Separate API:
-1.
+1. Update methods in ProcessController by removing uses of blade
 
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed
