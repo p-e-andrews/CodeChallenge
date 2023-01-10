@@ -103,7 +103,7 @@ class ProcessController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // PA: replaced update requests and return re API tutorial on positronx.io
+    // PA: replaced update() requests and return re API tutorial on positronx.io
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -129,12 +129,15 @@ class ProcessController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // PA: replaced return statement re API tutorial on positronx.io
     public function destroy($id)
     {
         $process = Process::find($id);
         $process->delete();
+        return response()->json('Process deleted!');
 
-        return redirect('/processes')->with('success', 'Process deleted!');
+        //return redirect('/processes')->with('success', 'Process deleted!');
 
     }
 }
