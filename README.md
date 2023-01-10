@@ -168,8 +168,8 @@ NOTES:
 
 ----------------------Andrews Log: Continued---------------------
 GOALS:
-- Set up Feature tests and Unit tests with PHPUnit
 - Separate API completely (aka methods do not call on blade views)
+- Set up Feature tests and Unit tests with PHPUnit
 - Use VueJS to create a Modal for editing a record (Modal aka 'popup')
 - Explore security re PassPort or similar
 - Research 'Conditional Records List' possibilities
@@ -177,7 +177,12 @@ GOALS:
 - Clean up
 
 Set up separate branch:
-1. Create and switch to new branch, in command line: git checkout -b
+1. Create and switch to new branch, in command line: git checkout -b separateAPI
+2. Push to the remote repo (aka GitHub), in command line: git push -u origin separateAPI
+3. Confirm on GitHub visually and/or confirm in command line: git branch -r
+
+Separate API:
+1.
 
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed
