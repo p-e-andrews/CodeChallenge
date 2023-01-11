@@ -3,8 +3,9 @@
 namespace Tests\Unit;
 
 //use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
+use App\Models\Process;
+
 
 class CreateTest extends TestCase
 {
@@ -14,16 +15,20 @@ class CreateTest extends TestCase
      * @return void
      */
 
-    // PA: use of databasemigrations will migrate db if req for every test & roll back afterwards
-     use DatabaseMigrations;
-
     //
-    public function can_create_crud() {
-        //Given we have a process object
-        $process = factory ('App\Process')->make();
+    public function test_create_crud() {
+        //Given we have an EMPTY database
+        Process::truncate();
+
+        //And we have a process object
+        $process = Process::factory()->make();
+
         //When a user submits a post request to create process endpoint
         $this->post('/processes/create', $process->toArray());
-        $response = $this->get('/processes');
+        
+        //Refresh so database shows the correct number more quickly
+        $process->refresh();
+
         //Then it gets stored in the database
         $this->assertEquals(1, Process::all()->count());
     }

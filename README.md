@@ -177,6 +177,9 @@ https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
 
 Testing:
 https://5balloons.info/laravel-tdd-beginner-crud-example/
+https://stackoverflow.com/questions/44119401/laravel-faker-whats-the-difference-between-create-and-make#:~:text=create%20persists%20to%20the%20database,new%20instance%20of%20the%20model.
+https://laracasts.com/discuss/channels/laravel/how-to-wait-for-modelinsert-to-finish
+https://stackoverflow.com/questions/15484404/how-to-delete-all-the-rows-in-a-table-using-eloquent
 
 GOALS:
 1. Separate API completely (aka methods do not call on blade views)
@@ -205,6 +208,9 @@ Testing setup:
 
 Unit testing:
 1. Create test for READ, in command line: php artisan make:test ReadTest --unit
+2. Go to ReadTest.php, add line to have a process in db, add line to read, add line to assert
+3. Create test for CREATE, in coomand line: php artisan make:test CreateTest --unit
+4. Go to CreateTest.php, add line to empty database, add line to create process, add line to send to db, add assert to check process exists in db
 
 
 Setup Vue:
@@ -212,4 +218,5 @@ Setup Vue:
 
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed
-2. PHPUnit 'coverage' is a driver that must be installed separately: pecl install pcov
+2. PHPUnit 'coverage' is a driver that must be installed separately
+3. PHP, "create persists to the database while make just creates a new instance of the model"
