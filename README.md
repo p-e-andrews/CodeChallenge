@@ -175,14 +175,17 @@ https://www.git-tower.com/learn/git/faq/git-create-remote-branch
 API:
 https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
 
+Testing:
+https://www.ernestmuroiwa.com/laravel-unit-testing-crud/
+
 GOALS:
-- Separate API completely (aka methods do not call on blade views)
-- Set up Feature tests and Unit tests with PHPUnit
-- Use VueJS to create a Modal for editing a record (Modal aka 'popup')
-- Explore security re PassPort or similar
-- Research 'Conditional Records List' possibilities
-- Examine working in Docker
-- Clean up
+1. Separate API completely (aka methods do not call on blade views)
+2. Set up Feature tests and Unit tests with PHPUnit
+3. Use VueJS to create a Modal for editing a record (Modal aka 'popup')
+4. Explore security re PassPort or similar
+5. Research 'Conditional Records List' possibilities
+6. Examine working in Docker
+7. Clean up
 
 Set up separate branch:
 1. Create and switch to new branch, in command line: git checkout -b separateAPI
@@ -193,7 +196,21 @@ Separate API:
 1. Update methods in ProcessController by removing uses of blade
 2. Update/Add CRUD API routes in web.php and api.php
 
+Testing setup:
+1. Log in to local server, in command line: mysql -uscott -utiger
+2. Switch to correct database, in command line: use andrews_database;
+3. Confirm target table exists, in command line: show tables;
+4. Check correct table setup, in command line: describe processes;
+5. Confirm seeded enteries from prior test setup, in command line: select * from processes;
+6. Install PHPUnit, in command line: composer require --dev phpunit/phpunit
+7. Install pcov for phpunit 'coverage;, in command line: pecl install pcov
+
+Unit testing:
+1. Create test for READ, in command line: php artisan make:test ReadTest --unit
+
+
 Setup Vue:
 
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed
+2. PHPUnit 'coverage' is a driver that must be installed separately: pecl install pcov
