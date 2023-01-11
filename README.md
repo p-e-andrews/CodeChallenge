@@ -176,7 +176,7 @@ API:
 https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
 
 Testing:
-https://www.ernestmuroiwa.com/laravel-unit-testing-crud/
+https://5balloons.info/laravel-tdd-beginner-crud-example/
 
 GOALS:
 1. Separate API completely (aka methods do not call on blade views)
@@ -202,14 +202,13 @@ Testing setup:
 3. Confirm target table exists, in command line: show tables;
 4. Check correct table setup, in command line: describe processes;
 5. Confirm seeded enteries from prior test setup, in command line: select * from processes;
-6. Install PHPUnit, in command line: composer require --dev phpunit/phpunit
-7. Install pcov for phpunit 'coverage;, in command line: pecl install pcov
 
 Unit testing:
 1. Create test for READ, in command line: php artisan make:test ReadTest --unit
 
 
 Setup Vue:
+
 
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed

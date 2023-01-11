@@ -6,7 +6,7 @@ namespace Tests\Unit;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
-class ProcessTest extends TestCase
+class ReadTest extends TestCase
 {
     /**
      * A basic test example.
@@ -17,13 +17,7 @@ class ProcessTest extends TestCase
     // PA: use of databasemigrations will migrate db if req for every test & roll back afterwards
      use DatabaseMigrations;
 
-    public function test_the_application_returns_a_successful_response()
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
+    //
     public function can_read_crud() {
         //Given we have a process in the database
         $process = factory ('App\Process')->create();
