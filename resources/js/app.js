@@ -1,17 +1,30 @@
-<template>
-    <div class="container"> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse">
-                <div class="navbar-nav">
-                    <router-link to="/" class="nav-item nav-link">Products List</router-link>
-                    <router-link to="/create" class="nav-item nav-link">Create Product</router-link>
-                </div>
-            </div>
-        </nav>
-        <router-view> </router-view>
-    </div>
-</template>
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+require('./bootstrap');
+window.Vue = require('vue');
+import App from './App.vue';
+import VueAxios from 'vue-axios';
+import VueRouter from 'vue-router';
+import axios from 'axios';
+import { routes } from './routes';
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+Vue.use(VueRouter);
+Vue.use(VueAxios, axios);
  
-<script>
-    export default {}
-</script>
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes
+});
+ 
+const app = new Vue({
+    el: '#app',
+    router: router,
+    render: h => h(App),
+});

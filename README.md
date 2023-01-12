@@ -178,6 +178,7 @@ https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
 Vue:
 https://stackoverflow.com/questions/73142864/npm-run-watch-not-working-and-returning-errors-saying-missing-watch
 https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
+https://saidhayani.medium.com/understand-routing-in-vue-js-with-examples-6da96979c8e3
 
 Testing:
 https://5balloons.info/laravel-tdd-beginner-crud-example/
@@ -216,11 +217,13 @@ Vue:
 1. Under 'resources/views' create a new folder 'layout'
 2. In the new folder create new file 'app.blade.php'
 3. Insert the JS CRUD operations code from the positronx.io tutorial cited above
-4. Create template to help invoke vue routes, under 'resources/js' create new file 'App.js'
+4. Create template to help invoke vue routes, under 'resources/js' create new file 'App.vue'
 5. Under 'resources/js/components' create files 'AllProcess.vue' 'CreateProcess.vue' 'Edit Process.vue'
-6. Re cited positronix, add code to AllProcess.vue and update fields etc
-7. Re cited positronix, add code to CreateProcess.vue and update fields etc
-8. Re cited positronix, add code to EditProcess.vue and update fields etc
+6. Re cited positronx, add code to AllProcess.vue and update fields etc
+7. Re cited positronx, add code to CreateProcess.vue and update fields etc
+8. Re cited positronx, add code to EditProcess.vue and update fields etc
+9. Create routes for vue, under 'resources/js' create file 'routes.js'
+10. Add required packages to 'App.js' under 'resources/js', re cited positronx 
 
 Testing setup:
 1. Log in to local server, in command line: mysql -uscott -utiger
@@ -241,4 +244,4 @@ NOTES:
 2. PHPUnit 'coverage' is a driver that must be installed separately
 3. PHP, "create persists to the database while make just creates a new instance of the model"
 4. Best to create fake database for tests
-5. 
+5. Be very careful, we have created TWO App files in the js folder, App.js and then in 'components' App.vue
