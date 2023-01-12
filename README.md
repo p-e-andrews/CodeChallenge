@@ -175,6 +175,10 @@ https://www.git-tower.com/learn/git/faq/git-create-remote-branch
 API:
 https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
 
+Vue:
+https://stackoverflow.com/questions/73142864/npm-run-watch-not-working-and-returning-errors-saying-missing-watch
+https://www.positronx.io/create-laravel-vue-js-crud-single-page-application/
+
 Testing:
 https://5balloons.info/laravel-tdd-beginner-crud-example/
 https://stackoverflow.com/questions/44119401/laravel-faker-whats-the-difference-between-create-and-make#:~:text=create%20persists%20to%20the%20database,new%20instance%20of%20the%20model.
@@ -199,6 +203,17 @@ Separate API:
 1. Update methods in ProcessController by removing uses of blade
 2. Update/Add CRUD API routes in web.php and api.php
 
+Setup Vue:
+1. Install Laravel Vue UI, in command line: composer require laravel/ui
+2. Continue, in command line: php artisan ui vue
+3. Install the vue router & vue axios packages, in command line: npm install vue-router vue-axios
+4. Install npm packages, in command line: npm install
+5. Compile the assets, in command line: npm run watch
+6. If 'watch' doesn't work, go to package.json & under scripts add: "watch": "vite build --watch"
+7. If command line 'watch' didn't work beforem, try again now
+
+Vue:
+
 Testing setup:
 1. Log in to local server, in command line: mysql -uscott -utiger
 2. Switch to correct database, in command line: use andrews_database;
@@ -213,10 +228,9 @@ Unit testing:
 4. Go to CreateTest.php, add line to empty database, add line to create process, add line to send to db, add assert to check process exists in db
 
 
-Setup Vue:
-
-
 NOTES:
 1. Challenge might imply that blade returns VueJS, more research needed
 2. PHPUnit 'coverage' is a driver that must be installed separately
 3. PHP, "create persists to the database while make just creates a new instance of the model"
+4. Best to create fake database for tests
+5. 
