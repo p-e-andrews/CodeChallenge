@@ -13,14 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 // PA: added updated route re API tutorial on positronx.io
 Route::get('{any}', function () {
-    return view('app');
+    return view('layout/app');
 })->where('any', '.*');
+
 
 // PA: commented out route during API overhaul for blade removal
 //Route::resource('processes', 'App\Http\Controllers\ProcessController');
