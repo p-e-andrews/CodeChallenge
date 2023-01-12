@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -10,6 +11,6 @@
 </head>
 <body>
     <div id="app"></div>
-    <script src="{{ mix('resources/js/app.js') }}" type="text/javascript"></script>
+    <script src="{{ mix('resources/js/app.js') }}" type="module"></script>
 </body>
 </html>
