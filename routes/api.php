@@ -15,9 +15,9 @@ use App\Http\Controllers\ProcessController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 // PA: added CRUD API route below and imported ProcessController at top
 Route::middleware('api')->group(function () {

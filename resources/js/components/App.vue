@@ -4,8 +4,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav">
-                    <router-link to="/" class="nav-item nav-link">Products List</router-link>
-                    <router-link to="/create" class="nav-item nav-link">Create Product</router-link>
+                    <router-link to="/" class="nav-item nav-link">Processes List</router-link>
+                    <router-link to="/create" class="nav-item nav-link">Create Process</router-link>
                 </div>
             </div>
         </nav>

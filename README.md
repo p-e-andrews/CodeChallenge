@@ -223,7 +223,16 @@ Vue:
 7. Re cited positronx, add code to CreateProcess.vue and update fields etc
 8. Re cited positronx, add code to EditProcess.vue and update fields etc
 9. Create routes for vue, under 'resources/js' create file 'routes.js'
-10. Add required packages to 'App.js' under 'resources/js', re cited positronx 
+10. Add required packages to 'App.js' under 'resources/js', re cited positronx
+
+Start Vue CRUD:
+1. Open 2 command line windows
+2. In the first window, cd into your project, then start npm: npm run watch
+3. In the second window, cd into yourproject, then start dev server: php artisan serve
+4. In your browser navigate to http://127.0.0.1:8000/
+5. If nothing appears, F12 or inspect page, look under network tab
+6. For 404 on app.css or app.js, check your blade file references/paths (see NOTE 6)
+7.
 
 Testing setup:
 1. Log in to local server, in command line: mysql -uscott -utiger
@@ -245,3 +254,4 @@ NOTES:
 3. PHP, "create persists to the database while make just creates a new instance of the model"
 4. Best to create fake database for tests
 5. Be very careful, we have created TWO App files in the js folder, App.js and then in 'components' App.vue
+6. app.blade.vue could not see app.css or app.js until references were updated from 'css/app.css' to 'resources/css/app.css' and 'js/app.js' to 'resources/js/app.js'
