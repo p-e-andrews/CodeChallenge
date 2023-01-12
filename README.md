@@ -213,6 +213,14 @@ Setup Vue:
 7. If command line 'watch' didn't work beforem, try again now
 
 Vue:
+1. Under 'resources/views' create a new folder 'layout'
+2. In the new folder create new file 'app.blade.php'
+3. Insert the JS CRUD operations code from the positronx.io tutorial cited above
+4. Create template to help invoke vue routes, under 'resources/js' create new file 'App.js'
+5. Under 'resources/js/components' create files 'AllProcess.vue' 'CreateProcess.vue' 'Edit Process.vue'
+6. Re cited positronix, add code to AllProcess.vue and update fields etc
+7. Re cited positronix, add code to CreateProcess.vue and update fields etc
+8. Re cited positronix, add code to EditProcess.vue and update fields etc
 
 Testing setup:
 1. Log in to local server, in command line: mysql -uscott -utiger
