@@ -35,11 +35,6 @@
                 <label for="status">Status</label>
                 <input type="text" class="form-control" name="status" value={{ $process->status }} />
             </div>
-            @if ($process->status == 1)
-                <input value="active">
-            @elseif ($group->status == 0)
-                <input value="inactive">
-            @endif
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
