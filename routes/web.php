@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Process;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* PA: fixed undefined variable error re https://www.reddit.com/r/laravel/comments/w0rbm8/undefined_variable_error/
+* and by adding import statement at top for use of 'Process' below
+*/
 Route::get('/', function () {
-    return view('base');
+    return view('processes/index', ['processes' => Process::all()]);
 });
 
 Route::resource('processes', 'App\Http\Controllers\ProcessController');
