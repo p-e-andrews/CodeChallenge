@@ -1,18 +1,25 @@
-
 <template>
-    <div class="container"> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="collapse navbar-collapse">
-                <div class="navbar-nav">
-                    <router-link to="/" class="nav-item nav-link">Processes List</router-link>
-                    <router-link to="/create" class="nav-item nav-link">Create Process</router-link>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <router-link to="/" class="navbar-brand" href="#">Laravel VUE CRUD Application - LaravelTuts</router-link>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item" exact-active-class="active">
+                            <router-link to="/" class="nav-link">Home</router-link>
+                        </li>
+                        <li class="nav-item" exact-active-class="active">
+                            <router-link to="/process" class=" nav-link">Process</router-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-        <router-view> </router-view>
-    </div>
+        <div class="container mt-5">
+            <router-view></router-view>
+        </div>
+    </main>
 </template>
- 
 <script>
     export default {}
 </script>

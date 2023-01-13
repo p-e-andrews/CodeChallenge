@@ -17,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 //    return view('welcome');
 //});
 
+//PA: added updated route for blade and vue
+//Route::get('processes', 'ProcessController@index')->name('process.index');
+
 // PA: added updated route re API tutorial on positronx.io
 Route::get('{any}', function () {
-    return view('layout/app');
+    return view('app');
 })->where('any', '.*');
 
 

@@ -1,21 +1,26 @@
-import AllProcess from './components/AllProcess.vue';
-import CreateProcess from './components/CreateProcess.vue';
-import EditProcess from './components/EditProcess.vue';
- 
+const Welcome = () => import('./components/Welcome.vue')
+const ProcessList = () => import('./components/process/AllProcess.vue')
+const ProcessCreate = () => import('./components/process/CreateProcess.vue')
+const ProcessEdit = () => import('./components/process/EditProcess.vue')
 export const routes = [
     {
         name: 'home',
         path: '/',
-        component: AllProcess
+        component: Welcome
     },
     {
-        name: 'create',
-        path: '/create',
-        component: CreateProcess
+        name: 'processList',
+        path: '/process',
+        component: ProcessList
     },
     {
-        name: 'edit',
-        path: '/edit/:id',
-        component: EditProcess
+        name: 'processEdit',
+        path: '/process/:id/edit',
+        component: ProcessEdit
+    },
+    {
+        name: 'processAdd',
+        path: '/process/add',
+        component: ProcessCreate
     }
-];
+]
